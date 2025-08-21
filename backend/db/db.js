@@ -182,3 +182,40 @@ export async function getNews() {
 
   return res.rows;
 }
+
+export async function getArticlesNeedingSummary(limit = 200) {
+  await ensureSchema();
+  const _pool = await getPool();
+
+  const { rows } = await _pool.query(
+    `
+    SELECT url, news_content, source, title
+    FROM news_articles
+    WHERE 
+      news_content IS NOT NULL 
+      AND news_content <> '' 
+      AND (summary IS NULL OR summary = '')
+    ORDER BY updated_at ASC
+    LIMIT $1
+    `,
+    [limit]
+  );
+
+  return rows;
+}
+
+export async function updateSummary(url, summary) {
+  await ensureSchema();
+  const _pool = await getPool();
+
+  const { rowCount } = await _pool.query(
+    `
+    UPDATE news_articles
+    SET summary = $2, updated_at = NOW()
+    WHERE url = $1
+    `,
+    [url, summary]
+  );
+
+  return rowCount > 0;
+}
