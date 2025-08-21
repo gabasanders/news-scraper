@@ -79,7 +79,7 @@ async function callSummarizationAPI(payload) {
     const out = new Map();
     const parts = data?.response_body?.parts ?? [];
     for (const p of parts) {
-      const id = p.req_id || p.id; // tolera variações
+      const id = p.req_id || p.id; 
       const content = p.response_content;
       if (id && typeof content === "string") {
         out.set(id, content.trim());
@@ -155,19 +155,17 @@ async function callSummarizationAPI(payload) {
     console.log("Requesting Summaries for the saved news articles...");
 
     
-    // Busca artigos que têm conteúdo e ainda não possuem summary
-    const pending = await getArticlesNeedingSummary(200); // ajuste o limite
+    // Seek news articles needing summary
+    const pending = await getArticlesNeedingSummary(200); 
 
     console.log(`Found ${pending.length} articles needing summary.`);
 
-    // Processa em lotes para não sobrecarregar a API
+    // Process in batches so we don't overload the API
     const BATCH_SIZE = 20;
 
     for (let i = 0; i < pending.length; i += BATCH_SIZE) {
     const batch = pending.slice(i, i + BATCH_SIZE);
 
-    // Monta parts no formato exigido
-    // e mapeia p_id -> url para atualizar o banco na volta
     const idToUrl = new Map();
 
     const parts = batch.map((item, idx) => {
@@ -178,8 +176,8 @@ async function callSummarizationAPI(payload) {
         id: partId,
         lang: "pt",
         content: item.news_content,
-        source: item.source ?? "",              // opt
-        notes: item.title ? String(item.title) : "" // opt
+        source: item.source ?? "",             
+        notes: item.title ? String(item.title) : "" 
         };
     });
 

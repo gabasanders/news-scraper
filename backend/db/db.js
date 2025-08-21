@@ -24,7 +24,7 @@ function adminConfig() {
   return {
     host: String(PGHOST),
     port: Number(PGPORT),
-    user: String(PGUSER),  // pode ser o próprio myuser se tiver CREATEDB
+    user: String(PGUSER),  
     password: String(PGPASSWORD),
     database: String('postgres'),  // <-- postgres/template1
     connectionTimeoutMillis: 5000
