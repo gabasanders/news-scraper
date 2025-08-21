@@ -1,0 +1,187 @@
+/* Estilos gerais para a página (adaptado da intenção do seu #root) */
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilos para o container de notícias, baseados no seu CSS */
+.news-container {
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article-container {
+  width: 30%;
+  background-color: hsl(189, 100%, 85%);
+  padding: 0.1rem;
+  margin: 0.5rem auto;
+  text-align: center;  
+}
+
+
+/* Seletores corrigidos para h3 e p DENTRO de .article-container */
+.article-container h3 {
+  font-size: 1rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.article-container p {
+  font-size: 1rem;
+
+}
+
+/* From Uiverse.io by SouravBandyopadhyay */ 
+.card-title {
+  color: #262626;
+  font-size: 1.2em;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.small-desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #452c2c;
+}
+
+.small-desc {
+  font-size: 0.75em;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #6293c8, #384c6c);
+  border-radius: 0 4px 0 32px;
+  text-decoration: none;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card {
+  display: block;
+  position: relative;
+  max-width: 20%;
+  max-height: 100%;
+  background-color: #f2f8f9;
+  border-radius: 10px;
+  padding: 1.2em;
+  margin: 0.6em;
+  text-decoration:none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-around;
+  padding-top: 0;
+}
+
+.card:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: linear-gradient(135deg, #364a60, #384c6c);
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+  transform: scale(40);
+}
+
+.card:hover .small-desc {
+  transition: all 0.5s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+  transition: all 0.5s ease-out;
+  color: #ffffff;
+}
+
+.meta-data {
+  color: #262626;
+  font-size: 0.68rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card:hover .meta-data {
+  color: #ffffff;
+  font-size: 0.68rem;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s ease-out;
+  
+}
+
+.keyword-container {
+  display: flex;
+  text-align: center;
+  justify-content:center;
+  gap: 0.8em;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.keyword {
+  font-size:0.70em;
+  background-color: #384c6c;
+  color: #ffffff;
+  opacity: 0.9;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  border-radius: 0.6em;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
+
+.card:hover .keyword {
+  background-color: #c3e6ec;
+  color: #262626;
+  transition: all 0.s ease-in-out;
+}
+
+.custom-select {
+  min-width: 350px;
+}
+
+.custom-select select {
+  appearance: none;
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #000;
+  cursor: pointer;
+}

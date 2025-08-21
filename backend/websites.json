@@ -1,0 +1,106 @@
+{
+    "g1": {
+        "url": "https://g1.globo.com/carros/",
+        "region": "BR",
+        "pubDate" : ["meta[itemprop='datePublished']","content"],
+        "textContent" : ".mc-article-body p",
+        "source" : "g1",
+        "news_structure": [{
+            "container": ".feed-post-body",
+            "header": "._evt p",
+            "desc": ".feed-post-body-resumo p",
+            "link": "._evt a"
+        }]
+    },
+
+    "autoesporte": {
+        "url": "https://autoesporte.globo.com/carros/carros-eletricos-e-hibridos/",
+        "region": "BR",
+        "pubDate" : ["time[itemprop='datePublished']","datetime"],
+        "textContent" : ".content-text__container",
+        "source" : "autoesporte",
+        "news_structure": [{
+            "container": ".feed-post-body",
+            "header": ".feed-post-link.gui-color-primary.gui-color-hover a",
+            "desc": ".feed-post-body-resumo",
+            "link": ".feed-post-link.gui-color-primary.gui-color-hover a"
+        }]
+    },
+
+    "4rodas": {
+        "url": "https://quatrorodas.abril.com.br/carros-eletricos",
+        "region": "BR",
+        "pubDate" : ["meta[property='pubDate']","content"],
+        "textContent" : ".content",
+        "source" : "4rodas",
+        "news_structure": [
+            {
+                "container": ".block.breaking-news.dark.image",
+                "header": ".title",
+                "desc": ".description",
+                "link": "a"
+            },
+            {
+                "container": ".card.d",
+                "header": ".title",
+                "desc": ".description",
+                "link": "a"
+            },
+            {
+                "container": ".card.b",
+                "header": ".title",
+                "desc": ".description",
+                "link": "Within"
+            },
+            {
+                "container": ".card.not-loaded.list-item",
+                "header": ".title",
+                "desc": "None",
+                "link": "a"
+            }
+        ]
+    },
+
+        "motortrend": {
+            "url": "https://www.motortrend.com/auto-news/electric",
+            "region": "US",
+            "pubDate" : ["time[datetime]","datetime"],
+            "textContent" : ".flex.flex-col.gap-8.md\\:gap-12",
+            "source" : "motortrend",
+            "news_structure": [{
+                "container": ".grid.grid-flow-row.grid-cols-1 .group\\/card.block.w-full.text-left.\\@container",
+                "header": "h2",
+                "desc": "None",
+                "link": "Within"
+            }]
+        },
+
+        "bitauto": {
+            "url": "https://www.bitauto.com/zh-br/news/",
+            "region": "CH",
+            "pubDate" : [".yc-news-author-time-text","None"],
+            "textContent" : ".yc-news-content",
+            "source" : "bitauto",
+            "news_structure": [{
+                "container": ".news-item",
+                "header": ".item-title.line-two",
+                "desc": ".item-summary.line-two",
+                "link": "a"
+            }]
+        },
+
+        "autohome": {
+            "url": "https://www.autohome.com.cn/news/",
+            "region": "CH",
+            "pubDate" : [".article-info .time","None"],
+            "textContent" : ".article-details",
+            "source" : "autohome",
+            "news_structure": [{
+                "container": ".article-wrapper .article a",
+                "header": "h3",
+                "desc": "p",
+                "link": "Within"
+            }]
+        }
+
+}
